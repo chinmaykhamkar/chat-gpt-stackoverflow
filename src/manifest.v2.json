@@ -1,0 +1,24 @@
+{
+    "name": "ChatGPT for stackoverflow",
+    "description": "Display ChatGPT response alongside stackoverflow questions",
+  "version": "1.1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "permissions": ["webRequest", "https://*.openai.com/"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://stackoverflow.com/questions/*"],
+      
+      "js": ["content-script.js"],
+      "css": ["github-markdown.css", "styles.css"]
+    }
+  ]
+}
